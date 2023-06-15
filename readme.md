@@ -346,6 +346,24 @@ public class pro8 {
 # pro9.java
 
 ```java
+public class pro9{
+    static public void div ( int a ,int b) throws ArithmeticException{
+        try{
+
+            System.out.println(a/b);
+        }catch (ArithmeticException e){
+            throw new ArithmeticException(" Some thing when worng : Error");
+        
+        }
+    }
+    public static void main(String[] args) {
+        try{
+            div(10,0);
+        }catch(ArithmeticException e){
+            System.out.println(e) ;
+        }
+    }
+}
 
 ```
 
