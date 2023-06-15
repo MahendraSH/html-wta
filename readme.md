@@ -355,6 +355,44 @@ public class pro8 {
 
 ```java
 
+class Threadx extends Thread{
+    public void run(){
+        for(int i=0;i<20;i++)
+        {
+            System.out.println("x i="+i);
+        }
+        System.out.println("x ends");
+    }
+}
+
+public class pro10 {
+    public static void main(String[] args) {
+       System.out.println( Thread.currentThread().getName());
+       Thread x =new Thread(new Threadx());
+
+       x.setPriority(Thread.MAX_PRIORITY);
+       System.out.println("The Priotity :"+x.getPriority());
+       x.start();
+       System.out.println("The x thread is runing or not  "+x.isAlive());
+       try{
+        x.sleep(2500);
+
+
+       }
+       catch(Exception e){
+        System.out.println(e);
+       }
+       System.out.println("The x thread is runing or not   "+x.isAlive());
+       System.out.println(Thread.currentThread().getName());
+         System.out.println(Thread.currentThread().getPriority());
+       System.out.println("main program ends ");
+
+
+    }
+
+}
+
+
 ```
 
 ---
@@ -378,6 +416,45 @@ public class pro8 {
 # pro13.java
 
 ```java
+public class pro13{
+    public static void main(String[] args) {
+        String s1="java";
+        String s3= "Java";
+        String s2=null;
+        // Find the number of characters in the given string
+        System.out.println(s1.length());
+        // Check whether the string is null or not
+         if(s2 == null){
+            System.out.println("null");
+         }
+        //  compare two strings ingonre case
+System.out.println(s1.compareToIgnoreCase(s3));
+
+// Join the three strings
+System.out.println(s1+s3);
+// Convert the uppercase/lowercase of the given string
+System.out.println(s1.toUpperCase());
+
+// Convert the lowercase/uppercase of the given string
+System.out.println(s3.toLowerCase());
+// Replace all occurrences of the specified CharSequence;
+
+System.out.println(s1.replaceAll("a","A"));
+// Remove beginning and ending spaces of this string.
+
+System.out.println(s1.trim());
+// Split the given string
+
+String []s = s1.split("a");
+
+for(String s4:s){
+    System.out.println(s4);
+
+
+    }
+}
+}
+
 
 ```
 
@@ -386,6 +463,39 @@ public class pro8 {
 # pro14.java
 
 ```java
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+
+public class pro14{
+    public static void main(String[] args) throws FileNotFoundException , IOException {
+        Scanner cin = new Scanner(System.in);
+        System.out.println("Enter the file name ");
+        String name = cin.nextLine();
+        BufferedReader br = new BufferedReader(new InputStreamReader( new  FileInputStream( new File( name))));
+        String line;
+        int countLines =0;
+        int countWords =0;
+        int countCharacters =0;
+        while((line = br.readLine()) != null){
+            System.out.println(line);
+            countLines++;
+             String s []=   line.split(" ");
+             countWords += s.length;
+             for(String word : s){
+                 countCharacters += word.length();
+             }
+        }
+        System.out.println("Number of lines = " + countLines);
+        System.out.println("Number of words = " + countWords);
+        System.out.println("Number of characters = " + countCharacters);
+        cin.close();
+    }
+}
 
 ```
 
@@ -393,7 +503,33 @@ public class pro8 {
 
 # pro15.java
 
-```
+```java
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.util.Scanner;
+
+public class pro15{
+    public static void main(String[] args) throws FileNotFoundException , IOException {
+        Scanner cin = new Scanner(System.in);
+        System.out.println(" Enter the file name to write");
+        BufferedWriter fout = new BufferedWriter(new  OutputStreamWriter( new FileOutputStream(new File( cin.next()))));
+        System.out.println("Enter the text to write");
+        String s ;
+        while((s=cin.nextLine()) !=null && ( !s.equals("exit"))){
+            fout.write(s);
+            fout.newLine();
+            s=null;
+        }
+
+  fout.close();
+  cin.close();
+    }
+
+}
 
 ```
 
@@ -609,6 +745,58 @@ public class pro8 {
 # pro20.php
 
 ```php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       *{
+        overflow: hidden;
+        box-sizing: border-box;
+        margin: 0;
+        padding:0;
+       }
+       table{
+        margin: 1rem;
+        border: 1px solid black;
+       }
+       td{
+        width: 2rem;
+        height: 2rem;
+        padding: 2rem;
+       }
+       .fill{
+        background-color: black;
+
+       }
+    </style>
+</head>
+<body>
+    <table>
+        <?php
+        for($i=0;$i<8;$i++){
+echo"<tr>";
+for($j=0;$j<8;$j++){
+    if(($i+$j)%2==0){
+        echo " <td></td>";
+    }
+    else{
+
+        echo " <td class='fill'></td>";
+    }
+
+}
+echo "</tr>";
+
+}
+?>
+    </table>
+
+</body>
+</html>
+
 
 ```
 
@@ -617,7 +805,40 @@ public class pro8 {
 # pro21.php
 
 ```php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="http://localhost/wta/h.php" method="post">
+        <input type="number" name="id" id="id">
+        <input type="submit" value="submit">
+        <input type="reset" value="reset">
+    </form>
 
+    <?php
+    if($_POST){
+        $id = $_POST['id'];
+        echo$id;
+        $con = mysqli_connect("localhost","root","","employee");
+        if($con){
+            $sql = "SELECT * FROM emp where id = ${id}";
+
+            $result = $con->query($sql);
+            if($result->num_rows>0){
+                $row = $result->fetch_assoc();
+                foreach($row as $key => $i ){
+                    echo $key ." => " .$i."<br/>";
+                }
+            }
+        }
+    }
+    ?>
+</body>
+</html>
 ```
 
 ---
@@ -625,6 +846,46 @@ public class pro8 {
 # pro22.php
 
 ```php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="http://localhost/wta/h.php" method="post">
+        <input type="number" name="id" id="id" placeholder="id"/> <br/>
+        <input type="number" name="salary" id="id" placeholder="salary"/> <br/>
+        <input type="text" name="name" id="name" placeholder="name"/> <br/>
+        <input type="text" name="job" id="job" placeholder="name" /> <br/>
+        <input type="submit" value="submit"/>
+        <input type="reset" value="reset"/>
+    </form>
+
+    <?php
+    if($_POST){
+        $id = $_POST['id'];
+        $name = $_POST['name'];
+        $salary = $_POST['salary'];
+        $job = $_POST['job'];
+
+        $con = mysqli_connect("localhost","root","","employee");
+        if($con){
+            $sql = "INSERT INTO `emp` (`name`, `id`, `salary`, `job`) VALUES ('$name', '$id', '$salary', '$job');";
+
+            if( $con->query($sql)){
+                echo "<p> id => ${id} </p>";
+                echo "<p> name => ${name} </p>";
+                echo "<p> salary => s${salary}</p>";
+                echo "<p> job => ${job}</p>";
+            }
+
+        }
+    }
+    ?>
+</body>
+</html>
 
 ```
 
