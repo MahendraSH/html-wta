@@ -283,6 +283,63 @@ public class pro7 {
 # pro8.java
 
 ```java
+public class pro8 {
+    public static void main(String[] args) {
+        //  null ponter exception
+        String s =null ;
+      try {
+        System.out.println(s.length());
+      } catch (NullPointerException e) {
+        System.out.println(e);
+      }
+    //   arry index outof bound
+    int [] arr = {1,2,3,4,5};
+    try {
+        System.out.println(arr[100]);
+    } catch (ArrayIndexOutOfBoundsException e) {
+        System.out.println(e);
+
+    }
+
+    //  arthimetic exception
+    try {
+        int a = 10;
+        int b = 0;
+        System.out.println(a/b);
+    }catch (ArithmeticException e) {
+        System.out.println(e);
+
+    }
+
+
+    // number format error
+
+     try {
+        String str = "12s3";
+        int a = Integer.parseInt(str);
+        System.out.println(a);
+
+     }
+     catch (NumberFormatException e) {
+        System.out.println(e);
+     }
+
+
+    //  string index out of bound
+    String str = "hello";
+
+        try {
+        System.out.println(str.charAt(100));
+    } catch (StringIndexOutOfBoundsException e) {
+        System.out.println(e);
+    }
+
+}
+
+
+}
+
+
 
 ```
 
