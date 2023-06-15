@@ -609,6 +609,58 @@ public class pro8 {
 # pro20.php
 
 ```php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       *{
+        overflow: hidden;
+        box-sizing: border-box;
+        margin: 0;
+        padding:0;
+       }
+       table{
+        margin: 1rem;
+        border: 1px solid black;
+       }
+       td{
+        width: 2rem;
+        height: 2rem;
+        padding: 2rem;
+       }
+       .fill{
+        background-color: black;
+
+       }
+    </style>
+</head>
+<body>
+    <table>
+        <?php
+        for($i=0;$i<8;$i++){
+echo"<tr>";
+for($j=0;$j<8;$j++){
+    if(($i+$j)%2==0){
+        echo " <td></td>";
+    }
+    else{
+        
+        echo " <td class='fill'></td>";
+    }
+    
+}
+echo "</tr>";
+
+}
+?>
+    </table>
+    
+</body>
+</html>
+
 
 ```
 
