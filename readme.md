@@ -669,7 +669,40 @@ echo "</tr>";
 # pro21.php
 
 ```php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="http://localhost/wta/h.php" method="post">
+        <input type="number" name="id" id="id">
+        <input type="submit" value="submit">
+        <input type="reset" value="reset">
+    </form>
+    
+    <?php
+    if($_POST){
+        $id = $_POST['id'];
+        echo$id;
+        $con = mysqli_connect("localhost","root","","employee");
+        if($con){
+            $sql = "SELECT * FROM emp where id = ${id}";
 
+            $result = $con->query($sql);
+            if($result->num_rows>0){
+                $row = $result->fetch_assoc();
+                foreach($row as $key => $i ){
+                    echo $key ." => " .$i."<br/>";
+                }
+            }
+        }
+    }
+    ?>
+</body>
+</html>
 ```
 
 ---
@@ -677,6 +710,46 @@ echo "</tr>";
 # pro22.php
 
 ```php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="http://localhost/wta/h.php" method="post">
+        <input type="number" name="id" id="id" placeholder="id"/> <br/>
+        <input type="number" name="salary" id="id" placeholder="salary"/> <br/>
+        <input type="text" name="name" id="name" placeholder="name"/> <br/>
+        <input type="text" name="job" id="job" placeholder="name" /> <br/>
+        <input type="submit" value="submit"/>
+        <input type="reset" value="reset"/>
+    </form>
+    
+    <?php
+    if($_POST){
+        $id = $_POST['id'];
+        $name = $_POST['name'];
+        $salary = $_POST['salary'];
+        $job = $_POST['job'];
+
+        $con = mysqli_connect("localhost","root","","employee");
+        if($con){
+            $sql = "INSERT INTO `emp` (`name`, `id`, `salary`, `job`) VALUES ('$name', '$id', '$salary', '$job');";
+
+            if( $con->query($sql)){
+                echo "<p> id => ${id} </p>";
+                echo "<p> name => ${name} </p>";
+                echo "<p> salary => s${salary}</p>";
+                echo "<p> job => ${job}</p>";
+            }
+         
+        }
+    }
+    ?>
+</body>
+</html>
 
 ```
 
