@@ -569,7 +569,39 @@ public class pro8 {
 # pro19.html
 
 ```html
-
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      div {
+        overflow: hidden;
+        margin: 1rem auto;
+        padding: 2rem;
+        border: 2rem purple solid;
+        align-items: center;
+        text-align: center;
+        width: 50%;
+      }
+      .fill {
+        padding: 1rem;
+        background-color: purple;
+        border: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="fill">Lorem, ipsum dolor.</div>
+      Lorem, ipsum dolor.
+    </div>
+  </body>
+</html>
 ```
 
 ---
