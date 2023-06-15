@@ -348,3 +348,193 @@ public class pro8 {
 ```java
 
 ```
+
+---
+
+# pro10.java
+
+```java
+
+```
+
+---
+
+# pro11.java
+
+```java
+
+```
+
+---
+
+# pro12.java
+
+```java
+
+```
+
+---
+
+# pro13.java
+
+```java
+
+```
+
+---
+
+# pro14.java
+
+```java
+
+```
+
+---
+
+# pro15.java
+
+```
+
+```
+
+---
+
+# pro16.java
+
+```java
+
+```
+
+---
+
+# pro17.html
+
+```html
+
+```
+
+---
+
+# pro18.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        overflow: hidden;
+        box-sizing: border-box;
+      }
+      div {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        border-radius: 150px;
+        border: darkblue 1px solid;
+        animation: infinite linear 30s div;
+        margin: auto;
+      }
+      div span {
+        position: absolute;
+        width: 1px;
+        background-color: darkblue;
+        height: 100%;
+        display: inline-block;
+        left: 50%;
+      }
+      span:nth-child(1) {
+        transform: rotate(15deg);
+      }
+      span:nth-child(2) {
+        transform: rotate(30deg);
+      }
+      span:nth-child(3) {
+        transform: rotate(45deg);
+      }
+      span:nth-child(4) {
+        transform: rotate(60deg);
+      }
+      span:nth-child(5) {
+        transform: rotate(75deg);
+      }
+      span:nth-child(6) {
+        transform: rotate(90deg);
+      }
+      span:nth-child(7) {
+        transform: rotate(105deg);
+      }
+      span:nth-child(8) {
+        transform: rotate(120deg);
+      }
+      span:nth-child(9) {
+        transform: rotate(135deg);
+      }
+      span:nth-child(10) {
+        transform: rotate(150deg);
+      }
+      span:nth-child(11) {
+        transform: rotate(165deg);
+      }
+      span:nth-child(12) {
+        transform: rotate(180deg);
+      }
+
+      @keyframes div {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <span></span><span></span><span></span><span></span><span></span
+      ><span></span><span></span><span></span><span></span><span></span
+      ><span></span><span></span>
+    </div>
+  </body>
+</html>
+
+
+```
+
+---
+
+# pro19.html
+
+```html
+
+```
+
+---
+
+# pro20.php
+
+```php
+
+```
+
+---
+
+# pro21.php
+
+```php
+
+```
+
+---
+
+# pro22.php
+
+```php
+
+```
+
+---
