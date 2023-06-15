@@ -199,8 +199,84 @@ public class pro5{
 
 # pro7.java
 
+## folder stucture
+
+```bash
+└───pack1 --Add.java
+    └───pack2 -- Sub.java
+        └───pack3 --Cal.java
+
+ --  pro7.java  - in root folder of project
+
+```
+
+## pack1 --Add.java
 
 ```java
+package pack1;
+
+public class Add {
+    public void add ( int a ,int b){
+        System.out.println(a+b);
+
+    }
+
+}
+
+
+```
+
+## pack2--sub.java
+
+```java
+package pack1.pack2;
+
+public class Sub {
+  public  void sub(int a,int b) {
+        System.out.println(a-b);
+
+    }
+}
+
+
+```
+
+## pack3 --cal.java
+
+```java
+package pack1.pack2.pack3;
+
+import pack1.*;
+import pack1.pack2.*;
+
+public class Cal {
+    public void cal (int a, int b){
+        Add add =new Add();
+        Sub sub = new Sub();
+        add.add(a,b);
+        sub.sub(a,b);
+    }
+
+
+}
+
+
+```
+
+## pack3--pro7.java
+
+```java
+
+import pack1.pack2.pack3.Cal;
+
+public class pro7 {
+    public static void main(String[] args) {
+        Cal c =new Cal();
+        c.cal(20,10);
+
+    }
+}
+
 
 ```
 
