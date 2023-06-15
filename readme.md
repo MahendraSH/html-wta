@@ -156,3 +156,62 @@ class pro4{
 
 
 ```
+
+---
+
+# pro5.java
+
+```java
+interface One{
+  public void  add(int a ,int b);
+}
+interface two{
+  public  void sub(int a ,int b);
+}
+
+class three implements One,two{
+    public void add(int a ,int b){
+        System.out.println(a+b);
+    }
+    public void sub(int a ,int b){
+        System.out.println(a-b);
+    }
+}
+public class pro5{
+    public static void main(String[] args) {
+        three obj = new three();
+        obj.add(10,20);
+        obj.sub(10,20);
+
+    }
+}
+
+
+```
+
+---
+
+# pro6.java
+
+```java
+
+```
+
+# pro7.java
+
+
+```java
+
+```
+
+# pro8.java
+
+```java
+
+```
+
+# pro9.java
+
+```java
+
+```
